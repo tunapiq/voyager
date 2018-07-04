@@ -16,7 +16,7 @@ class MultipleImage extends BaseType
     {
         $filesPath = [];
         $files = $this->request->file($this->row->field);
-
+        if(!$files)return;
         foreach ($files as $file) {
             $image = InterventionImage::make($file)->orientate();
 
